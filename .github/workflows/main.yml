@@ -56,7 +56,7 @@ jobs:
       # Only run on pull request and compare to Main as set in the build rules file Shiftleft.yml
       if: ${{ github.event_name == 'pull_request' }}
       run: | 
-            ${GITHUB_WORKSPACE}/sl check-analysis --app shiftleft-java-demo2 \
+            ${GITHUB_WORKSPACE}/sl check-analysis --v2 --app shiftleft-java-demo2 \
             --branch "${{ github.head_ref || steps.extract_branch.outputs.branch }}" \
             --report \
             --github-pr-number=${{github.event.number}} \
