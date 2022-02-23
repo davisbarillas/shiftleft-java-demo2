@@ -14,7 +14,7 @@ finding-modifications:
     tags:
       - key: cvss_score
         value: 5
-      - key: info
-        value: moderate
+      - key: severity
+        value: info
       - key: reason
         value: appsec_approved
