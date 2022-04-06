@@ -33,8 +33,8 @@ public class PatientController {
   public Iterable<Patient> getPatient() {
     Patient pat = patientRepository.findOne(1l);
     if (pat != null) {
-      //log.info("First Patient is {}", pat.toString());
-      log.info("First Patient is not NULL");
+      log.info("First Patient is {}", pat.toString());
+      //log.info("First Patient is not NULL");
     }
     return patientRepository.findAll();
   }
