@@ -1,0 +1,26 @@
+name: ArmorCode
+
+env:
+  product: shiftleft-java-demo
+  subProduct: shiftleft-java-demo
+  environment: Production
+  token: ${{secrets.ARMORCODE_TOKEN}}
+  buildTool: GITHUB_ACTIONS
+  buildNumber: ${{github.run_number}}
+  end: 30
+  
+on:
+  # Triggers the workflow on push request events
+  push:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # ArmorCode Validation Step
+    steps:
+      - name: ArmorCode Validation
+        run: |
+          wget https://app.armorcode.com/static/scripts/slastatus.sh
+          sh slastatus.sh
